@@ -16,6 +16,7 @@ wordDict = {"": 0}
 revWordDict = {0: ""}
 cross_entropy = tf.keras.losses.BinaryCrossentropy(from_logits=True)
 EPOCHS = 50
+BATCH_SIZE = 1
 noise_dim = 100
 num_examples_to_generate = 16
 generator_optimizer = keras.optimizers.Adam()
@@ -105,7 +106,7 @@ def generator_loss(fake_output):
     return cross_entropy(tf.ones_like(fake_output), fake_output)
 
 def train_step(cards):
-    noise = tf.random.uniform(shape = [1,noise_dim], maxval = len(wordDict), dtype = tf.int32)
+    noise = tf.random.uniform(shape = [BATCH_SIZE,noise_dim], maxval = len(wordDict), dtype = tf.int32)
     generated_cards = generator(noise, training=True)
 
     real_output = discriminator(cards, training=True)

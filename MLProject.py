@@ -14,6 +14,7 @@ textSize = 50
 outputNeurons = costSize+nameSize+typeSize+textSize
 wordDict = {"": 0}
 revWordDict = {0: ""}
+input_data = [[]]
 cross_entropy = tf.keras.losses.BinaryCrossentropy(from_logits=True)
 EPOCHS = 50
 BATCH_SIZE = 1
@@ -45,7 +46,7 @@ def discriminator_model():
     model.add(layers.Dense(1, activation = "relu", use_bias=False))
     return model
 
-def addWordsToDictionaryFromString(line):
+def addWordsToDictionaryFromString(line, i):
     catagories = line.split(";") #Separates by ;'s and gets rid of ;'s
     
     for catagory in catagories:
@@ -63,6 +64,7 @@ def addWordsToDictionaryFromString(line):
                 if not "." in wordDict:
                     wordDict["."] = len(wordDict)
                     revWordDict[len(wordDict)-1] = "."
+                    
                 word = word[len(word) -1]
 
             #Add word to dictionary
@@ -143,8 +145,28 @@ def train(dataset, epochs):
 
 
 cardList = readInputFile("Cards.txt")
+i = 0
 for card in cardList:
-    addWordsToDictionaryFromString(card)
+    addWordsToDictionaryFromString(card, i)
+    i += 1
+
+print(wordDict)
+
+train_data = [[]]
+i = 0
+for card in cardList:
+    train_data.append([])
+    categories = card.split(";") #Separates by ;'s and gets rid of ;'s
+    for category in categories:
+        words = category.split() #Separates by spaces 
+        for word in words:
+            if word[len(word) -1] == ".":
+                train_data[i].append(wordDict[word[len(word) -1].lower()])
+                train_data[i].append(wordDict["."])
+            else:
+                train_data[i].append(wordDict[word.lower()])
+    i += 1
+    
 
 
 generator = generator_model()

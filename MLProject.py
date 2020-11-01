@@ -165,8 +165,7 @@ for card in cardList:
                 train_data[i].append(wordDict[word.lower()])
     i += 1
     
-for word in train_data:
-    print(word)
+print(train_data)
 
 generator = generator_model()
 discriminator = discriminator_model()

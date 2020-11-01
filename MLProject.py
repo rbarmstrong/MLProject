@@ -1,4 +1,5 @@
 import tensorflow as tf
+from tensorflow.keras import layers
 from tensorflow.python.keras import backend as K
 K.clear_session()
 

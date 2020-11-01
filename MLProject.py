@@ -3,6 +3,8 @@ import tensorflow.keras as keras
 from tensorflow.keras import layers
 from tensorflow.python.keras import backend as K
 import numpy as np
+import time
+import os
 K.clear_session()
 
 nameSize = 4
@@ -121,9 +123,22 @@ def train_step(cards):
 def generateSaveCards(model, test_input, epoch):
     cards = model(test_input, training=False)
     f = open("outputFile.txt", "a")
-    f.write("Card at epoch ", epoch)
+    f.write("Card at epoch {}".format(epoch))
     f.write(getWordsFromNumbers(cards))
     f.close()
+
+def train(dataset, epochs):
+    noise = tf.random.uniform(shape=[1, noise_dim], maxval=767, dtype=tf.int32)
+    for epoch in range(epochs):
+        start = time.time()
+        for cards in dataset:
+            train_step(cards)
+
+        generateSaveCards(generator, noise, epoch + 1)
+        if (epoch + 1) % 5 == 0:
+            checkpoint.save(file_prefix=checkpoint_prefix)
+        print('Time for epoch {} is {} sec'.format(epoch + 1, time.time() - start))
+    generateSaveCards(generator, noise, epochs)
 
 
 cardList = readInputFile("Cards.txt")
@@ -133,8 +148,9 @@ for card in cardList:
 
 generator = generator_model()
 discriminator = discriminator_model()
-
-print(wordDict)
-
-
-
+checkpoint_dir = './training_checkpoints'
+checkpoint_prefix = os.path.join(checkpoint_dir, "ckpt")
+checkpoint = tf.train.Checkpoint(generator_optimizer=generator_optimizer,
+                                 discriminator_optimizer=discriminator_optimizer,
+                                 generator=generator,
+                                 discriminator=discriminator)

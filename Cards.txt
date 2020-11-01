@@ -1,0 +1,367 @@
+Aggregate;1;Skill;Gain Energy for 6 cards in your draw pile.
+All for one;2;Attack;Deal 10 damage. Put all cost 0 cards from your discard pile into your hand.
+Amplify;1;Skill;This turn your next Power card is played twice.
+Auto-shields;1;Skill;IF you have no Block gain 11 block.
+Ball Lightning;1;Attack;Deal 7 damage. Channel 1 lightning.
+Barrage;1;Attack;Deal 4 damage for each Channeled Orb.
+Beam Cell;0;Attack;Deal 3 damage. Apply 1 Vulnerable.
+Biased Cognition;1;Power;Gain 4 Focus. At the start of your turn lose 1 Focus.
+Blizzard;1;Attack;Deal damage equal to 2 times the number of Frost Channeled this combat to ALL enemies.
+Boot sequence;0;Skill;Innate. Gain 10 Block. Exhaust.
+Buffer;2;Power;Prevent the next time you would lose HP.
+Bullseye;1;Attack;Deal 8 damage Apply 2 Lock-On.
+Capacitor;1;Power;Gain 2 Orb slots.
+Chaos;1;Skill;Channel 1 random Orb.
+Charge Battery;1;Skill;Gain 7 Block. Next turn gain Energy.
+Chill;0;Skill;Channel 1 Frost for each enemy in combat. Exhaust.
+Claw;0;Attack;Deal 6 damage. Channel 1 Frost.
+Cold Snap;1;Attack;Deal 6 damage. Channel 1 Frost.
+Compile Driver;1;Attack;Deal 7 damage. Draw 1 card for each unique Orb you have.
+Consume;2;Skill;Gain 2 Focus. Lose 1 Orb slot.
+Colheaded;1;Skill;Channel 1 Frost. Draw 1 card.
+Core Surge;1;Attack;Deal 11 damage.Gain 1 Artifact. Exhaust.
+Creative AI;3;Power;At the start of your turn add a random Power card into your hand.
+Darkness;1;Skill;Channel 1 Dark.
+Defend;1;Skill;Gain 5 Block.
+Defragment;1;Power;Gain 1 focus.
+Doom and Gloom;2;Attack;Deal 10 damage to All enemies. Channel 1 Dark.
+Double Energy;1;Skill;Double your Energy.Exhaust.
+Doulcast;1;Skill;Evoke your next Orb twice.
+Echo Form;3;Power;Ethereal. The first card you play each turn is played twice.
+Electrodynamics;2;Power;Lightning now hits All enemies. Channel 2 lightning.
+Equilibrium;2;Skill;Gain 13 Block. Retain your hand this turn.
+FTL;0;Attack;Deal 5 damage. If you have played less than 3 cards this turn draw 1 card.
+Fission;0;Skill;Remove all your orbs. Gain Energy and draw 1 card for each orb removed. Exhaust.
+Force Field;4;Skill;Costs 1 less Energy for each Power card played this combat. Gain 12 Block.
+Fusion;2;Skill;Channel 1 Plasma.
+Genetic Algorithm;1;Skill;Gain 1 block. Permanently increase this card's Block by 2. Exhaust.
+Glacier;2;Skill;Gain 7 Block. Channel 2 Frost.
+Go for the Eyes;0;Attack;Deal 3 damage. If the enemy intends to attack apply 1 weak.
+Heatsinks;1;Power;Whenever you play a Power card draw 1 card.
+Hello World;1;Power;At the start of your turn add a random Common card into your hand.
+Hologram;1;Skill;Gain 3 Block.Put a card from your discard pile into your hand. Exhaust.
+Hyperbeam;2;Attack;Deal 26 damage to ALL enemies. Lost 3 focus.
+Leap;1;Skill;Gain 9 block.
+Loop;1;Power;At the start of your turn trigger the passive ability of your next orb.
+Machine Learning;1;Power;At the start of your turn draw 1 additional card.
+Melter;1;Attack;Remove all block from the enemy. Deal 10 damage.
+Meteor Strike;5;Attack;Deal 24 damage. Channel 3 Plasma.
+Multi-Cast;X;Skill;Evoke your next orb X times.
+Overclock;0;Skill;Draw 2 cards. Add a Burn into your discard pile.
+Rainbow;2;Skill;Channel 1 Lightning. Channel 1 Frost. Channel 1 Dark. Exhaust.
+Reboot;0;Skill;Shuffle All your cards into your draw pile. Draw 4 cards. Exhaust.
+Rebound;1;Attack;Deal 9 damage. Put the next card you play this turn on top of your draw pile.
+Recursion;1;Skill;Evoke your next orb. Channel the orb that was just Evoked.
+Recycle;1;Skill;Exhaust a card. Gain Energy equal to its cost.
+Reinforced Body;X;Skill;Gain 7 Block X times.
+Reprogram;1;Skill;Lose 2 Focus. Gain 1 Strength. Gain 1 Dexterity.
+Rip and Tear;1;Attack;Deal 7 damage to a random enemy twice.
+Scrape;1;Attack;Deal 7 damage.Draw 3 cards. Discard all cards drawn this way that do not cost 0.
+Seek;0;Skill;Put 1 card from your draw pile into your hand. Exhaust.
+Self Repair;1;Power;At the end of comabt, heal 7 HP.
+Skim;1;Skill;Draw 3 cards.
+Stack;1;Skill;Gain Block equal to the nunber of cards in your discard pile.
+Static Discharge;1;Power;Whenever you receive unblocked attack damage Channel 1 Lightning.
+Steam Barrier;0;Skill;Gain 6 Block. Decrease this card's Block by 1 this combat.
+Storm;1;Power;Whenever you play a Power card, Channel 1 Lightning.
+Streamline;2;Attack;Deal 15 damage. Reduce this card's cost by 1 this combat.
+Strike;1;Attack;Deal 6 damage.
+Sunder;3;Attack;Deal 24 damage. If this kills an enemy gain Energy Energy Energy.
+Sweeping Beam;1;Attack;Deal 6 damage to ALL enemies. Draw 1 card.
+TURBO;0;Skill;Gain Energy Energy. Add a Void into your discard pile.
+Tempest;X;Skill;Channel X Lightning. Exhaust.
+Thunder Strike;3;Attack;Deal 7 damage to a random enemy for each Lightning Channeled this combat.
+White Noise;1;Skill;Add a random Power card into your hand. It costs 0 this turn. Exhaust.
+Zap;1;Skill;Channel 1 Lightning.
+A Thousand Cuts;2;Power;Whenever you play a card deal 1 damage to all enemies.
+Accuracy;1;Power;Shivs deal 3 additional damage.
+Acrobatics;1;Skill;Draw 3 cards. Discard 1 card.
+Adrenaline;0;Skill;Gain Energy. Draw 2 cards. Exhaust.
+After Image;1;Power;Whenever you play a card gain 1 Block.
+Alchemize;1;Skill;Obtain a random potion. Exhaust.
+All-Out Attack;1;Attack;Deal 10 damage to ALL enemies. Discard 1 card at random.
+Backflip;1;Skill;Gain 5 Block. Draw 2 cards.
+Backstab;0;Attack;Innate. Deal 11 damage. Exhaust.
+Bane;1;Attack;Deal 7 damage. If the enemy has Poison deal 7 damage again.
+Blade Dance;1;Skill;Add 2 Shivs into your hand.
+Blur;1;Skill;Gain 5 Block. Block is not removed at the start of your next turn.
+Bouncing Flask;2;Skill; Apply 3 poison to a random enemy 3 times.
+Bullet Time;3;Skill;You cannot draw additional cards this turn. Reduce the cost of all cards in your hand to 0 this turn.
+Burst;1;Skill;This turn your next Skill is played twice.
+Calculated Gamble;0;Skill;Discard your hand then draw that many cards. Exhaust.
+Caltrops;1;Power;Whenever you are attacked deal 3 damage back.
+Catalyst;1;Skill;Double the enemy's Poison. Exhaust.
+Choke;2;Attack;Deal 12 damage. Whenever you play a card this turn the enemy loses 3 HP.
+Cloak and Dagger;1;Skill;Gain 6 Block. Add 1 Shiv into your hand.
+Concentrate;0;Skill;Discard 3 cards. Gain Energy Energy.
+Corpse Explosion;2;Skill;Apply 6 Poison. When the enemy dies deal damage equal to its max HP to ALL enemies.
+Crippling Cloud;2;Skill;Apply 4 Poison and 2 Weak to ALL enemies. Exhaust.
+Dager Spray;1;Attack;Deal 4 damage to ALL enemies twice.
+Dagger Throw;1;Attack;Deal 9 damage. Draw 1 card. Discard 1 card.
+Dash;2;Attack;Gain 10 Block. Deal 10 damage.
+Deadly Poison;1;Skill;Apply 5 Poison.
+Defend;1;Skill;Gain 5 Block.
+Deflect;0;Skill;Gain 4 Block.
+Die Die Die;1;Attack;Deal 13 damage to ALL enemies. Exhaust.
+Distraction;1;Skill;Add a random Skill into your hand. It costs 0 this turn. Exhaust.
+Dodge and Roll;1;Skill;Gain 4 Block. Next turn gain 4 block.
+Doppelganger;X;Skill;Next turn draw X cards and gain X Energy. Exhaust.
+Endless Agony;0;Attack;Deal 4 damage. Whenever you draw this card add a copy of it inot your hand. Exhaust.
+Envenom;2;Power;Whenever an Attack deals unblocked damage apply 1 Poison.
+Escape Plan;0;Skill;Draw 1 card. If you draw a skill gain 3 block.
+Eviscerate;3;Attack;Costs 1 less Energy for each card discarded this turn. Deal 6 damage 3 times.
+Expertise;1;Skill;Draw cards until you have 6 in your hand.
+Finisher;1;Attack;Deal 6 damage for each attack played this turn.
+Flechettes;1;Attack;Deal 4 damage for each Skill in your hand.
+Flying Knee;1;Attack;Deal 8 damage.Next turn gain Energy.
+Footwork;1;Power;Gain 2 Dexterity.
+Glass Knife;1;Attack;Deal 8 damage twice. Decrease the damage of this card by 2 this combat.
+Grand Finale;0;Attack;Can only be played if there are no cards in your draw pile. Deal 50 damage to ALL enemies.
+Heel Hook;1;Attack;Deal 5 damage. If the enemy has Weak gain Energy and draw 1 card
+Infinite Blades;1;Power;At the start of your turn add a Shiv into your hand.
+Leg Sweep;2;Skill;Apply 2 Weak. Gain 11 Block.
+Malaise;X;Skill;Enemy loses X Strength. Apply X Weak. Exhaust.
+Masterful Stab;0;Attack;Costs 1 additional Energy for each time you lost HP this combat. Deal 12 damage.
+Neutralize;0;Attack;Deal 3 damage. Apply 1 weak.
+Nightmare;3;Skill;Choose a card. Next turn add 3 copies of that card into your hand. Exhaust.
+Noxious Fumes;1;Power;At the start of your turn apply 2 Poison to ALL enemies.
+Outmaneuver;1;Skill;Next turn gain Energy Energy.
+Phantasmal Killer;2;Skill;Next turn your attacks deal double damage.
+Piercing Wail;1;Skill;All enemies lose 6 Strength this turn. Exhaust.
+Poisoned Stab;1;Attack;Deal 6 damage. Apply 3 poison.
+Predator;2;Attack;Deal 15 damage. Next turn draw 2 additional cards.
+Prepared;0;Skill;Draw 1 card. Discard 1 card.
+Quick Slash;1;Attack;Deal 8 damage. Draw 1 card.
+Reflex;-1;Unplayable.;If this card is discarded from your hand draw 1 card.
+Riddle with Holes;2;Attack;Deal 3 damage 5 times. 
+Setup;1;Skill;Put a card from your hand on top of your draw pile. It costs 0 until played.
+Skewer;X;Attack; Deal 7 damage X times.
+Slice;0;Attack;Deal 5 damage.
+Sneaky Strike;2;Attack;Deal 10 damage. If your have discarded a card this turn, gain Energy Energy.
+Storm of Steel;2;Skill;Discard your hand. Add 1 Shiv into your hand for each card discarded.
+Strike;1;Attack;Deal 6 damage.
+Sucker Punch;1;Attack;Deal 7 damage. Apply 1 Weak.
+Survivor;1;Skill;Gain 8 Block. Discard 1 card.
+Tactician;-1;Skill;Unplayable. If this card is discarded from your hand, gain Energy.
+Terror;1;Skill; Apply 99 Vulnerable. Exhaust.
+Tools of the Trade;1;Power;At the start of your turn, draw 1 card and discard 1 card.
+Unload;1;Attack;Deal 14 damage. Discard all non-Attack cards in your hand.
+Well-Laid Plans;1;Power;At the end of your turn, Retain up to 1 card.
+Wraith Form;3;Power;Gain 2 Intangible. At the end of your turn, lose 1 Dexterity.
+Anger;0;Attack;Deal 6 damage.
+Armaments;1;Skill;Gain 5 Block. Upgrade a card in your hand for the rest of combat.
+Barricade;3;Power;Block is not removed at the start of your turn.
+Bash;2;Attack;Deal 8 damage. Apply 2 Vulnerable.
+Battle Trance;0;Skill;Draw 3 cards. You cannot draw additional cards this turn.
+Berserk;0;Power;Gain 2 Vulnerable. At the start of your turn, gain Energy.
+Blood for Blood;4;Attack;Costs 1 less Energy for each time you lose HP this combat. Deal 18 damage.
+Bloodletting;0;Skill;Lose 3 HP. Gain Energy.
+Bludgeon;3;Attack;Deal 32 damage.
+Body Slam;1;Attack;Deal damage equal to your Block.
+Brutality;0;Power;At the start of your turn, lose 1 HP and draw 1 card.
+Burning Pact;1;Skill;Exhaust 1 card. Draw 2 cards.
+Carnage;2;Attack;Ethereal. Deal 20 damage.
+Clash;0;Attack;Can only be played if every card in your hand is an Attack. Deal 14 damage.
+Cleave;1;Attack;Deal 8 damage to ALL enemies.
+Clothesline;2;Attack;Deal 12 damage. Apply 2 Weak.
+Combust;1;Power;At the end of your turn, lose 1 HP and deal 5 damage to ALL enemies.
+Corruption;3;Power;Skills cost 0. Whenever you play a Skill, Exhaust it.
+Dark Embrace;2;Power;Whenever a card is Exhausted, draw 1 card.
+Defend;1;Skill;Gain 5 Block.
+Demon Form;3;Power;At the start of your turn, gain 2 Strength. Exhaust.
+Disarm;1;Skill;Enemy loses 2 Strength. Exhaust.
+Double Tap;1;Skill;This turn, your next Attack is played twice.
+Dropkick;1;Attack;Deal 5 damage. If the enemy has Vulnerable, gain Energy and draw 1 card.
+Dual Wield;1;Skill;Choose an Attack or Power card. Add a copy of that card into your hand.
+Entrench;2;Skill;Double your Block. 
+Evolve;1;Power;Whenever you draw a Status card, draw 1 card.
+Exhume;1;Skill;Put a card from your exhaust pile into your hand. Exhaust.
+Feed;1;Attack;Deal 10 damage. If Fatal, raise your max HP by 3. Exhaust.
+Feel No Pain;1;Power;Whenever a card is Exhausted, gain 3 Block.
+Fiend Fire;2;Attack;Exhaust your hand. Deal 7 damage for each card Exhausted. Exhaust.
+Fire Breathing;1;Power;Whenever you draw a Status or Curse card, deal 6 damage to ALL enemies.
+Flame Barrier;2;Skill;Gain 12 Block. Whenever you are attacked this turn, deal 4 damage.
+Flex;0;Skill;Gain 2 Strength. At the end of this turn, lose 2 Strength.
+Ghostly Armor;1;Skill;Ethereal. Gain 10 Block.
+Havoc;1;Skill;Play the top card of your draw pile and Exhaust it.
+Headbutt;1;Attack;Deal 9 damage. Put a card from your discard pile on top of your draw pile.
+Heavy Blade;2;Attack;Deal 13 damage. Strength affects this card 3 times.
+Hemokinesis;1;Attack;Lose 3 HP. Deal 14 damage.
+Immolate;2;Attack;Deal 21 damage to ALL enemies. Add a Burn into your discard pile.
+Impervious;2;Skill;Gain 30 Block. Exhaust.
+Infernal Blade;1;Skill;Add a random Attack into your hand. It costs 0 this turn. Exhaust.
+Inflame;1;Power;Gain 2 Strength.
+Intimidate;0;Skill;Apply 1 Weak to ALL enemies. 
+Iron Wave;1;Attack;Gain 5 Block. Deal 5 damage.
+Juggernaut;2;Power;Whenever you gain Block, deal 5 damage to a random enemy.
+Limit Break;1;Skill;Double your Strength. Exhaust.
+Metallicize;1;Power;At the end of your turn, gain 3 Block.
+Offering;0;Skill;Lose 6 HP. Gain Energy Energy. Draw 3 cards. Exhaust.
+Perfected Strike;2;Attack;Deal 6 damage. Deals 2 additional damage for ALL your card containing "Strike".
+Pommel Strike;1;Attack;Deal 9 damage. Draw 1 card.
+Power Through;1;Skill;Add 2 Wounds into your hand. Gain 15 Block.
+Pummel;1;Attack;Deal 2 damage 4 times. Exhaust.
+Rage;0;Skill;Whenever you play an Attack this turn, gain 3 Block.
+Rampage;1;Attack;Deal 8 damage. Increase this card's damage by 5 this combat.
+Reaper;2;Attack;Deal 4 damage to ALL enemies. Heal HP equal to unblocked damage. Exhaust.
+Reckless Charge;0;Attack;Deal 7 damage. Shuffle a Dazed into your draw pile.
+Rupture;1;Power;Whenever you lose HP from a card, gain 1 Strength.
+Searing Blow;2;Attack;Deal 12 damage. Can be Upgraded any number of times.
+Second Wind;1;Skill;Exhaust all non-Attack cards in your hand. Gain 5 Block for each card Exhausted.
+Seeing Red;1;Skill;Gain Energy Energy. Exhaust.
+Sentinel;1;Skill;Gain 5 Block. If this card is Exhausted, gain Energy Energy.
+Sever Soul;2;Attack;Exhaust all non-Attack cards in your hand. Deal 16 damage.
+Shockwave;2;Skill;Apply 3 Weak and Vulnerable to ALL enemies. Exhaust.
+Shrug It Off;Skill;Gain 8 Block. Draw 1 card.
+Spot Weakness;1;Skill;If the enemy intends to attack, gain 3 Strength.
+Strike;1;Attack;Deal 6 damage.
+Sword Boomerang;1;Attack;Deal 3 damage to a random enemy 3 times.
+Thunderclap;1;Attack;Deal 4 damage and apply 1 Vulnerable to ALL enemies.
+True Grit;1;Skill;Gain 7 Block. Exhaust 1 card at random.
+Twin Strike;1;Attack;Deal 5 damage twice.
+Uppercut;2;Attack;Deal 13 damage. Apply 1 Weak. Apply 1 Vulnerable.
+Warcry;0;Skill;Draw 1 card. Put a card from your hand onto the top of your draw pile. Exhaust.
+Whirlwind;X;Attack;Deal 5 damage to ALL enemies X times.
+Wild Strike;1;Attack;Deal 12 damage. Shuffle a Wound into your draw pile.
+Alpha;1;Skill;Shuffle a Beta into your draw pile. Exhaust.
+Battle Hymn;1;Power;At the start of each turn, add a Smite into your hand.
+Blasphemy;1;Skill;Enter Divinity. Die next turn. Exhaust.
+Bowling Bash;1;Attack;Deal 7 damage for each enemy in combat.
+Brilliance;1;Attack;Deal 12 damage. Deals additional damage equal to Mantra gained this combat.
+Carve Reality;1;Attack;Deal 6 damage. Add a Smite into your hand.
+Collect;X;Skill;Put a Miracle+ into your hand at the start of your next X turns. Exhaust.
+Conclude;1;Attack;Deal 12 damage to ALL enemies. End your turn.
+Conjure Blade;X;Skill;Shuffle an Expunger into your draw pile. Exhaust.
+Consecrate;0;Attack;Deal 5 damage to ALL enemies.
+Crescendo;1;Skill;Retain. Enter Wrath. Exhaust.
+Crush Joints;1;Attack;Deal 8 damage. If the last card played this combat was a Skill, apply 1 Vulnerable.
+Cut Through Fate;1;Attack;Deal 7 damage. Scry 2. Draw 1 card.
+Decieve Reality;1;Skill;Gain 4 Block. Add a Safety into your hand.
+Defend;1;Skill;Gain 5 Block.
+Deus Ex Machina;-1;Skill;Unplayable. When you draw this card, add 2 Miracles to your hand and Exhaust.
+Deva Form;3;Power;Ethereal. At the start of your turn, gain Energy and increase this gain by 1.
+Devotion;1;Power;At the start of your turn, gain 2 Mantra.
+Empty Body;1;Skill;Gain 7 Block. Exit your Stance.
+Empty Fist;1;Attack;Deal 9 damage. Exit your Stance.
+Empty Mind;1;Skill;Draw 2 cards. Exit your Stance.
+Eruption;2;Attack;Deal 9 damage. Enter Wrath.
+Establishment;1;Power;Whenever a Card is Retained, reduce its cost by 1 this combat.
+Evaluate;1;Skill;Gain 6 Block. Shuffle an Insight into your draw pile.
+Fasting;2;Power;Gain 3 Strength. Gain Dexterity. Gain 1 less Energy at the start of each turn.
+Fear No Evil;1;Attack;Deal 8 damage. If the enemy intends to Attack, enter Calm.
+Flurry of Blows;0;Attack;Deal 4 damage. Whenever you change Stances, return this from the discard pile to your hand.
+Flying Sleeves;1;Attack;Retain. Deal 4 damage twice.
+Follow-Up;1;Attack;Deal 7 damage. If the ladt card played this combat was an Attack, gain Energy.
+Foreign Influence;0;Skill;Choose 1 of 3 Attacks of any color to add into your hand. Exhaust. 
+Foresight;1;Power;At the start of your turn, Scry 3.
+Halt;0;Skill;Gain 3 Block. If you are in Wrath, gain 9 additional Block.
+Indignation;1;Skill;If you are in Wrath, apply 3 Vulnerable to All enemies, otherwise enter Wrath.
+Inner Peace;1;Skill;If you are in Calm, draw 3 cards, otherwise enter Calm.
+Judgment;1;Skill;If the enemy has 30 or less HP, set their HP to 0.
+Just Lucky;0;Attack;Scry 1. Gain 2 Block. Deal 3 damage.
+Lesson learned;2;Attack;Deal 10 damage. If Fatal, Upgrade a random card in your deck. Exhaust.
+Like Water;1;Power;At the end of your turn, if you are in Calm, gain 5 Block.
+Master Reality;1;Power;Whenever a card is created during combat, Upgrade it.
+Meditate;1;Skill;Put a card from your discard pile into your hand and Retain it. Enter Calm. End your turn.
+Mental Fortress;1;Power;Whenever you change Stances, gain 4 Block.
+Nirvana;1;Power;Whenever you Scry, gain 3 Block.
+Omniscience;4;Skill;Choose a card in your draw pile. Play the chosen card twice and exhaust it. Exhaust.
+Perserverance;1;Skill;Retain. Gain 5 Block. When Retained, increase its Block by 2 this combat.
+Pray;1;Skill;Gain 3 Mantra. Shuffle an Insight into your draw pile.
+Pressure Points;1;Skill;Apply 8 mark. All enemies lose HP equal to their Mark.
+Prostrate;0;Skill;Gain 2 Mantra. Gain 4 Block.
+Protect;2;Skill;Retain. Gain 12 Block.
+Ragnarok;3;Attack;Deal 5 damage to a random enemy 5 times.
+Reach Heaven;2;Attack;Deal 10 damage. Shuffle a Through Violence into your draw pile.
+Rushdown;1;Power;Whenever you enter Wrath, draw 2 cards. 
+Sanctity;1;Skill;Gain 6 Block. If thwe last card played this combat was a Skill, draw 2 cards.
+Sands of Time;4;Attack;Retain. Deal 20 damage. When Retained, lower its cost by 1 this combat.
+Sash Whip;1;Attack;Deal 8 damage. If the last card played this combat was an Attack, apply 1 Weak.
+Scrawl;1;Skill;Draw cards until your hand is full. Exhaust.
+Signature;2;Attack;Can only be played if this is the only Attack in your hand. Deal 30 damage.
+Simmering Fury;1;Skill;At the start of your next turn, enter Wrath and draw 2 cards.
+Spirit Shield;2;Skill;Gain 3 Block for each card in your hand.
+Strike;1;Attack;Deal 6 damage.
+Study;2;Power;At the end of your turn, shuffle an Insight into your draw pile.
+Swivel;2;Skill;Gain 8 Block. The next Attack you play costs 0.
+Talk to the Hand;1;Attack;Deal 5 damage. WHenever you attack this enemy, gain 2 Block. Exhaust.
+Tantrum;1;Attack;Deal 3 damage 3 times. Enter Wrath. Shuffle this card into your draw pile.
+Third Eye;1;Skill;Gain 7 Block. Scry 3.
+Tranquility;1;Skill;Retain. Enter Calm. Exhaust.
+Vault;3;Skill;Take an extra turn after this one. End your turn. Exhaust.
+Vigilance;2;Skill;Gain 8 Block. Enter Calm.
+Wallop;2;Attack; Deal 9 damage. Gain Block equal to unblocked damage dealt.
+Wave of the Hand;1;Skill;Whenever you gain Block this turn, apply 1 Weak to ALL enemies.
+Weave;0;Attack;Deal 4 damage. Whenever you Scry, return this from the discard pile to your Hand.
+Wheel Kick;2;Attack;Deal 15 damage. Draw 2 cards.
+Windmill Strike;2;Attack;Retain. Deal 7 damage. When Retained, increase its damage by 4 this combat.
+Wish;3;Skill;Choose one: Gain 6 Plated Armor, 3 Strength, or 25 Gold. Exhaust.
+Worship;2;Skill;Gain 5 Mantra.
+Wreath of Flame;1;Skill;Your next Attack deals 5 additional damage.
+Apparition;1;Skill;Ethereal. Gain 1 Intangible. Exhaust.
+Beta;2;Skill;Shuffle an Omega into your draw pile. Exhaust.
+Bite;1;Attack;Deal 7 damage. Heal 2 HP.
+Expunger;1;Attack;Deal 9 damage X times.
+Insight;0;Skill;Retain. Draw 2 cards. Exhaust.
+JAX;0;Skill;Lose 3 HP. Gain 2 Strength.
+Miracle;0;Skill;Retain. Gain Energy. Exhaust.
+Omega;3;Power;At the end of your turn, deal 50 damage to ALL enemies.
+Ritual Dagger;1;Attack;Deal 15 damage. If Fatal, permanently increase this card's damage by 3. Exhaust.
+Safety;1;Skill;Retain. Gain 12 Block. Exhaust.
+Shiv;0;Attack;Deal 4 damage. Exhaust.
+Smite;1;Attack;Retain. Deal 12 damage. Exhaust.
+Through Violence;0;Attack;Retain. Deal 20 damage. Exhaust.
+Burn;-1;Status;Unplayable. At the end of your turn, take 2 damage.
+Dazed;-1;Status;Unplayable. Ethereal.
+Slimed;1;Status;Exhaust.
+Void;-1;Status;Unplayable. Ethereal. Whenever this card is drawn, lose 1 Energy.
+Wound;-1;Status;Unplayable.
+Bandage Up;0;Skill;Heal 4 HP. Exhaust.
+Blind;0;Skill;Apply 2 Weak.
+Dark Shackles;0;Skill;Enemy loses 9 Strength this turn. Exhaust.
+Deep Breath;0;Skill;Shuffle your discard pile into your draw pile. Draw 1 card.
+Discovery;1;Skill;Choose 1 of 3 random cards to add into your hand. It costs 0 this turn. Exhaust.
+Dramatic Entrance;0;Attack;Innate. Deal 6 damage to ALL enemies. Exhaust.
+Enlightenment;0;Skill;Reduce the cost of all cards in your hand to 1 this turn.
+Finesse;0;Skill;Gain 2 Block. Draw 1 Card.
+Flash of Steel;0;Attack;Deal 3 damage. Draw 1 card.
+Forethought;0;Skill;Put a card from your hand to the bottom of your draw pile. It costs 0 until played.
+Good Instincts;0;Skill;Gain 5 Block.
+Impatience;0;Skill;If you have no Attacks in your hand, draw 2 cards.
+Jack of All Trades;0;Skill;Add 1 random Colorless card into your hand. Exhaust.
+Madness;1;Skill;Reduce the cost of a random card in your hand to 0 this combat. Exhaust.
+Mind Blast;2;Attack;Innate. Deal damage equal to the number of cards in your draw pile.
+Panacea;0;Skill;Gain 1 Artifact. Exhaust.
+Panic Button;0;Skill;Gain 30 Block. You cannot gain Block from cards for 2 turns. Exhaust.
+Purity;0;Skill;Exhaust up to 3 cards in your hand. Exhaust
+Swift Strike;0;Attack;Deal 6 damage.
+Trip;0;Skill;Apply 2 Vulnerable.
+Apotheosis;2;Skill;Upgrade ALL your cards for the rest of combat. Exhaust.
+Chrysalis;2;Skill;Shuffle 3 random Skills into your draw pile. They cost 0 this combat. Exhaust.
+Hand of Greed;2;Attack;Deal 20 damage. If Fatal, gain 20 Gold.
+Magnetism;2;Power;At the start of your turn, add a random Colorless card into your hand.
+Master of Strategy;0;Skill;Draw 3 cards. Exhaust.
+Mayhem;2;Power;At the start of your turn, play the top card of your draw pile.
+Metamorphosis;2;Skill;Shuffle 3 random Attacks into your draw pile. They cost 0 this combat. Exhaust.
+Panache;0;Power;Every time you play 5 cards in a single turn, deal 10 damage to ALL enemies;
+Sadistic Nature;0;Power;Whenever you apply a debuff to an enemy they take 3 damage.
+Secret Technique;0;Skill;Put a Skill from your draw pile into your hand. Exhaust.
+Secret Weapon;0;Skill;Put an Attack from your draw pile into your hand. Exhaust.
+The Bomb;2;Skill;At the end of 3 turns, deal 40 damage to ALL enemies.
+Thinking Ahead;0;Skill;Draw 2 cards. Put a card from your hand on top of your draw pile. Exhaust.
+Transmutation;X;Skill;Add X random Colorless cards into your gand. They cost 0 this turn. Exhaust.
+Violence;0;Skill;Put 3 random Attacks from your draw pile into your hand. Exhaust.
+Curse of the Bell;-1;Curse;Unplayable. Cannot be removed from your deck.
+Ascender's Bane;-1;Curse;Unplayabvle. Ethereal. Cannot be removed from your deck.
+Clumsy;-1;Curse;Unplayable. Ethereal.
+Decay;-1;Curse;Unplayable. At the end of your turn, take 2 damage.
+Doubt;-1;Curse;Unplayable. At the end of your turn, gain 1 Weak.
+Injury;-1;Curse;Unplayable.
+Necronomicurse;-1;Curse;Unplayable. There is no escape from this Curse.
+Normality;-1;Curse;Unplayable. While in hand, you cannot play more than 3 cards this turn.
+Pain;-1;Curse;Unplayable. While in hand, lose 1 HP whenever you play another card.
+Parasite;-1;Curse;Unplayable. If transformed or removed from your deck, lose 3 Max HP.
+Pride;1;Curse;Innate. At the end of your turn, put a copy of this card on top of your draw pile. Exhaust.
+Regret;-1;Curse;Unplayable. At the end of your turn, lose HP equal to the number of cards in your hand.
+Shame;-1;Curse;Unplayable. At the end of your turn, gain 1 Frail.
+Writhe;-1;Curse;Unplayable. Innate.

@@ -1,5 +1,4 @@
 import tensorflow as tf
-from tensorflow.keras import layers
 from tensorflow.python.keras import backend as K
 K.clear_session()
 
@@ -9,6 +8,7 @@ nameSize = 4
 typeSize = 1
 textSize = 50
 wordDict = {"": 0}
+revWordDict = {0: ""}
 
 def readInputFile(fileName):
     outputList = [];
@@ -41,15 +41,29 @@ def addWordsToDictionaryFromString(line):
             #If there is a period, add it to the dictionary
             if word[len(word) -1] == "." and not "." in wordDict:
                 wordDict["."] = len(wordDict)
+                revWordDict[len(wordDict)-1] = "."
 
             #Add word to dictionary
             if not word in wordDict:
                 wordDict[word.lower()] = len(wordDict)
+                revWordDict[len(wordDict)-1] = word.lower()
 
+
+def getWordsFromNumbers(numList):
+    word = ""
+    #Iterate through the numbers
+    for num in numList:
+        
+        #If the word to add is a period, remove the trailing period
+        if revWordDict[num] == ".":
+            word = word[: len(word) -1]
+        
+        word += revWordDict[num] + " "
+    return word
 
 cardList = readInputFile("Cards.txt")
 for card in cardList:
     addWordsToDictionaryFromString(card)
 
-print(wordDict)
+
 

@@ -26,11 +26,11 @@ def generator_model():
     return model
 
 def addWordsToDictionaryFromString(line):
-    catagories = line.split(";") #Separates by ;'s and gets rid of ;'s
+    categories = line.split(";") #Separates by ;'s and gets rid of ;'s
     
-    for catagory in catagories:
+    for category in categories:
         
-        words = catagory.split() #Separates by spaces 
+        words = category.split() #Separates by spaces 
         
         for word in words:
 

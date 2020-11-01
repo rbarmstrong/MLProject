@@ -87,7 +87,5 @@ generator = generator_model()
 
 generated_card = tf.make_ndarray(tf.make_tensor_proto(generator(noise, training=False)))
 
-print(wordDict)
-
 print(np.floor(generated_card)[0])
 print(getWordsFromNumbers(np.floor(generated_card)[0]))

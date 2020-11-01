@@ -1,4 +1,5 @@
 import tensorflow as tf
+from tensorflow.keras import layers
 from tensorflow.python.keras import backend as K
 K.clear_session()
 
@@ -43,5 +44,12 @@ def addWordsToDictionaryFromString(line):
 
             #Add word to dictionary
             if not word in wordDict:
-                wordDict[word] = len(wordDict)
+                wordDict[word.lower()] = len(wordDict)
+
+
+cardList = readInputFile("Cards.txt")
+for card in cardList:
+    addWordsToDictionaryFromString(card)
+
+print(wordDict)
 

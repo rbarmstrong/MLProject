@@ -1,10 +1,11 @@
 import tensorflow as tf
+from tensorflow.keras import layers
 from tensorflow.python.keras import backend as K
+import numpy as np
 K.clear_session()
 
-
-costSize = 1
 nameSize = 4
+costSize = 1
 typeSize = 1
 textSize = 50
 wordDict = {"": 0}
@@ -81,5 +82,12 @@ cardList = readInputFile("Cards.txt")
 for card in cardList:
     addWordsToDictionaryFromString(card)
 
+noise = tf.random.uniform(shape = [1,100], maxval = 767, dtype = tf.int32)
+generator = generator_model()
 
+generated_card = tf.make_ndarray(tf.make_tensor_proto(generator(noise, training=False)))
 
+print(wordDict)
+
+print(np.floor(generated_card)[0])
+print(getWordsFromNumbers(np.floor(generated_card)[0]))

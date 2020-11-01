@@ -148,7 +148,7 @@ cardList = readInputFile("Cards.txt")
 for card in cardList:
     addWordsToDictionaryFromString(card)
 
-print(wordDict)
+
 
 train_data = [[]]
 i = 0
@@ -165,7 +165,8 @@ for card in cardList:
                 train_data[i].append(wordDict[word.lower()])
     i += 1
     
-
+for word in train_data:
+    print(word)
 
 generator = generator_model()
 discriminator = discriminator_model()

@@ -155,18 +155,35 @@ i = 0
 for card in cardList:
     train_data.append([])
     categories = card.split(";") #Separates by ;'s and gets rid of ;'s
-    for category in categories:
-        words = category.split() #Separates by spaces 
+    for j in range(len(categories)):
+        words = categories[j].split() #Separates by spaces
+        periodCount = 0
         for word in words:
             if word[len(word) -1] == ".":
+                periodCount += 1
                 train_data[i].append(wordDict[word[:len(word) -1].lower()])
                 train_data[i].append(wordDict["."])
             else:
                 train_data[i].append(wordDict[word.lower()])
+
+        neededInputCount = 0
+        if j == 0:
+            neededInputCount = nameSize
+        elif j == 1:
+            neededInputCount = costSize
+        elif j == 2:
+            neededInputCount = typeSize
+        elif j == 3:
+            neededInputCount = textSize
+        
+        for k in range(len(words) + periodCount, neededInputCount):
+            train_data[i].append(wordDict[""])
     i += 1
 train_data = train_data[:len(train_data)-1]
     
-print(train_data)
+for i in range(len(train_data)):
+    if not len(train_data[i]) == 56:
+        print(i)
 
 
 generator = generator_model()

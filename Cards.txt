@@ -1,4 +1,4 @@
-Aggregate;1;Skill;Gain Energy for 6 cards in your draw pile.
+Aggregate;1;Skill;Gain Energy for every 6 cards in your draw pile.
 All for one;2;Attack;Deal 10 damage. Put all cost 0 cards from your discard pile into your hand.
 Amplify;1;Skill;This turn your next Power card is played twice.
 Auto-shields;1;Skill;IF you have no Block gain 11 block.
@@ -132,7 +132,7 @@ Poisoned Stab;1;Attack;Deal 6 damage. Apply 3 poison.
 Predator;2;Attack;Deal 15 damage. Next turn draw 2 additional cards.
 Prepared;0;Skill;Draw 1 card. Discard 1 card.
 Quick Slash;1;Attack;Deal 8 damage. Draw 1 card.
-Reflex;-1;Unplayable.;If this card is discarded from your hand draw 1 card.
+Reflex;-1;Unplayable;If this card is discarded from your hand draw 1 card.
 Riddle with Holes;2;Attack;Deal 3 damage 5 times. 
 Setup;1;Skill;Put a card from your hand on top of your draw pile. It costs 0 until played.
 Skewer;X;Attack; Deal 7 damage X times.
@@ -212,7 +212,7 @@ Seeing Red;1;Skill;Gain Energy Energy. Exhaust.
 Sentinel;1;Skill;Gain 5 Block. If this card is Exhausted, gain Energy Energy.
 Sever Soul;2;Attack;Exhaust all non-Attack cards in your hand. Deal 16 damage.
 Shockwave;2;Skill;Apply 3 Weak and Vulnerable to ALL enemies. Exhaust.
-Shrug It Off;Skill;Gain 8 Block. Draw 1 card.
+Shrug It Off;1;Skill;Gain 8 Block. Draw 1 card.
 Spot Weakness;1;Skill;If the enemy intends to attack, gain 3 Strength.
 Strike;1;Attack;Deal 6 damage.
 Sword Boomerang;1;Attack;Deal 3 damage to a random enemy 3 times.

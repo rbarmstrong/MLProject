@@ -46,7 +46,7 @@ def discriminator_model():
     model.add(layers.Dense(1, activation = "relu", use_bias=False))
     return model
 
-def addWordsToDictionaryFromString(line, i):
+def addWordsToDictionaryFromString(line):
     catagories = line.split(";") #Separates by ;'s and gets rid of ;'s
     
     for catagory in catagories:
@@ -145,10 +145,8 @@ def train(dataset, epochs):
 
 
 cardList = readInputFile("Cards.txt")
-i = 0
 for card in cardList:
-    addWordsToDictionaryFromString(card, i)
-    i += 1
+    addWordsToDictionaryFromString(card)
 
 print(wordDict)
 

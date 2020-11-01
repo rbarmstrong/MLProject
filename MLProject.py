@@ -118,9 +118,10 @@ def train_step(cards):
     generator_optimizer.apply_gradients(zip(gradients_of_generator, generator.trainable_variables))
     discriminator_optimizer.apply_gradients(zip(gradients_of_classifier, discriminator.trainable_variables))
 
-def generateSaveCards(model, test_input):
+def generateSaveCards(model, test_input, epoch):
     cards = model(test_input, training=False)
     f = open("outputFile.txt", "a")
+    f.write("Card at epoch ", epoch)
     f.write(getWordsFromNumbers(cards))
     f.close()
 

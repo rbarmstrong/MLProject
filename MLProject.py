@@ -85,16 +85,16 @@ def getWordsFromNumbers(numList):
             word += " Type: "
         if count == 5:
             word += " Description: "
-        
-        #If the word to add is a period, remove the trailing period
-        if revWordDict[num] == ".":
-            word = word[:len(word) -1]
-        
-        word += revWordDict[num]
+        if num in revWordDict:
+            #If the word to add is a period, remove the trailing period
+            if revWordDict[num] == ".":
+                word = word[:len(word) -1]
+            
+            word += revWordDict[num]
 
-        #If the word was not empty, add a space
-        if not revWordDict[num] == "":
-            word += " "
+            #If the word was not empty, add a space
+            if not revWordDict[num] == "":
+                word += " "
 
         
         count += 1
@@ -110,25 +110,27 @@ def generator_loss(fake_output):
 
 def train_step(cards):
     noise = tf.random.uniform(shape = [BATCH_SIZE,noise_dim], maxval = len(wordDict), dtype = tf.int32)
-    generated_cards = generator(noise, training=True)
 
-    real_output = discriminator(cards, training=True)
-    fake_output = discriminator(generated_cards, training=True)
+    with tf.GradientTape() as gen_tape, tf.GradientTape() as disc_tape:
+        generated_cards = generator(noise, training=True)
 
-    gen_loss = generator_loss(fake_output)
-    class_loss = classifier_loss(real_output, fake_output)
+        real_output = discriminator(cards, training=True)
+        fake_output = discriminator(generated_cards, training=True)
 
-    gradients_of_generator = tf.GradientTape().gradient(gen_loss, generator.trainable_variables)
-    gradients_of_classifier = tf.GradientTape().gradient(gen_loss, discriminator.trainable_variables)
+        gen_loss = generator_loss(fake_output)
+        class_loss = classifier_loss(real_output, fake_output)
 
-    generator_optimizer.apply_gradients(zip(gradients_of_generator, generator.trainable_variables))
-    discriminator_optimizer.apply_gradients(zip(gradients_of_classifier, discriminator.trainable_variables))
+        gradients_of_generator = gen_tape.gradient(gen_loss, generator.trainable_variables)
+        gradients_of_classifier = disc_tape.gradient(gen_loss, discriminator.trainable_variables)
+
+        generator_optimizer.apply_gradients(zip(gradients_of_generator, generator.trainable_variables))
+        discriminator_optimizer.apply_gradients(zip(gradients_of_classifier, discriminator.trainable_variables))
 
 def generateSaveCards(model, test_input, epoch):
     cards = model(test_input, training=False)
-    f = open("outputFile.txt", "a")
+    f = open("outputFile.txt", "w")
     f.write("Card at epoch {}".format(epoch))
-    f.write(getWordsFromNumbers(cards))
+    f.write(getWordsFromNumbers(tf.make_ndarray(tf.make_tensor_proto(cards))[0].round()))
     f.close()
 
 def train(dataset, epochs):
@@ -136,7 +138,7 @@ def train(dataset, epochs):
     for epoch in range(epochs):
         start = time.time()
         for cards in dataset:
-            train_step(cards)
+            train_step(tf.convert_to_tensor(cards))
 
         generateSaveCards(generator, noise, epoch + 1)
         if (epoch + 1) % 5 == 0:
@@ -180,11 +182,6 @@ for card in cardList:
             train_data[i].append(wordDict[""])
     i += 1
 train_data = train_data[:len(train_data)-1]
-    
-for i in range(len(train_data)):
-    if not len(train_data[i]) == 56:
-        print(i)
-
 
 generator = generator_model()
 discriminator = discriminator_model()
@@ -194,4 +191,6 @@ checkpoint = tf.train.Checkpoint(generator_optimizer=generator_optimizer,
                                  discriminator_optimizer=discriminator_optimizer,
                                  generator=generator,
                                  discriminator=discriminator)
+
+train(train_data, 250)
 

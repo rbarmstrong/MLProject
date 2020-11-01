@@ -1,15 +1,13 @@
-from tensorflow.keras import layers
 import tensorflow as tf
 from tensorflow.python.keras import backend as K
 K.clear_session()
-config = tf.ConfigProto()
-config.gpu_options.allow_growth = True
+
 
 costSize = 1
 nameSize = 4
 typeSize = 1
 textSize = 50
-
+wordDict = {"": 0}
 
 def readInputFile(fileName):
     outputList = [];
@@ -25,3 +23,25 @@ def generator_model():
     model.add(layers.Dense(outputNeurons, activation = "relu"))
     model.add(layers.Dense(outputNeurons, activation = "relu"))
     return model
+
+def addWordsToDictionaryFromString(line):
+    catagories = line.split(";") #Separates by ;'s and gets rid of ;'s
+    
+    for catagory in catagories:
+        
+        words = catagory.split() #Separates by spaces 
+        
+        for word in words:
+
+            #Finds errors where there isn't a space after a period
+            if word.find(".") >-1 and not word[len(word) -1] == ".":
+                print(word)
+                
+            #If there is a period, add it to the dictionary
+            if word[len(word) -1] == "." and not "." in wordDict:
+                wordDict["."] = len(wordDict)
+
+            #Add word to dictionary
+            if not word in wordDict:
+                wordDict[word] = len(wordDict)
+

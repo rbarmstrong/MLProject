@@ -67,7 +67,6 @@ def addWordsToDictionaryFromString(line):
                 wordDict[word.lower()] = len(wordDict)
                 revWordDict[len(wordDict)-1] = word.lower()
 
-
 def getWordsFromNumbers(numList):
     word = "Name: "
     count = 0
@@ -118,6 +117,12 @@ def train_step(cards):
 
     generator_optimizer.apply_gradients(zip(gradients_of_generator, generator.trainable_variables))
     discriminator_optimizer.apply_gradients(zip(gradients_of_classifier, discriminator.trainable_variables))
+
+def generateSaveCards(model, test_input):
+    cards = model(test_input, training=False)
+    f = open("outputFile.txt", "a")
+    f.write(getWordsFromNumbers(cards))
+    f.close()
 
 
 cardList = readInputFile("Cards.txt")

@@ -40,9 +40,10 @@ def addWordsToDictionaryFromString(line):
                 print(word)
                 
             #If there is a period, add it to the dictionary
-            if word[len(word) -1] == "." and not "." in wordDict:
-                wordDict["."] = len(wordDict)
-                revWordDict[len(wordDict)-1] = "."
+            if word[len(word) -1] == ".":
+                if not "." in wordDict:
+                    wordDict["."] = len(wordDict)
+                    revWordDict[len(wordDict)-1] = "."
                 word = word[len(word) -1]
 
             #Add word to dictionary
@@ -82,12 +83,12 @@ cardList = readInputFile("Cards.txt")
 for card in cardList:
     addWordsToDictionaryFromString(card)
 
-noise = tf.random.uniform(shape = [1,100], maxval = 767, dtype = tf.int32)
-generator = generator_model()
+#noise = tf.random.uniform(shape = [1,100], maxval = 767, dtype = tf.int32)
+#generator = generator_model()
 
-generated_card = tf.make_ndarray(tf.make_tensor_proto(generator(noise, training=False)))
+#generated_card = tf.make_ndarray(tf.make_tensor_proto(generator(noise, training=False)))
 
 print(wordDict)
 
-print(np.floor(generated_card)[0])
-print(getWordsFromNumbers(np.floor(generated_card)[0]))
+#print(np.floor(generated_card)[0])
+#print(getWordsFromNumbers(np.floor(generated_card)[0]))

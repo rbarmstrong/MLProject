@@ -8,6 +8,7 @@ nameSize = 4
 costSize = 1
 typeSize = 1
 textSize = 50
+outputNeurons = costSize+nameSize+typeSize+textSize
 wordDict = {"": 0}
 revWordDict = {0: ""}
 
@@ -19,11 +20,19 @@ def readInputFile(fileName):
     return outputList
 
 def generator_model():
-    outputNeurons = costSize+nameSize+typeSize+textSize
     model = tf.keras.Sequential()
     model.add(layers.Dense(outputNeurons, input_shape=(100,), activation = "relu", use_bias=False))
-    model.add(layers.Dense(outputNeurons, activation = "relu"))
-    model.add(layers.Dense(outputNeurons, activation = "relu"))
+    model.add(layers.Dense(outputNeurons, activation = "relu", use_bias=False))
+    model.add(layers.Dense(outputNeurons, activation = "relu", use_bias=False))
+    return model
+
+def discriminator_model():
+    model = tf.keras.Sequential()
+    model.add(layers.Dense(50, input_shape=(outputNeurons,), activation = "relu", use_bias=False))
+    model.add(layers.Dropout(0.3))
+    model.add(layers.Dense(50, activation = "relu", use_bias=False))
+    model.add(layers.Dropout(0.3))
+    model.add(layers.Dense(1, activation = "relu", use_bias=False))
     return model
 
 def addWordsToDictionaryFromString(line):
@@ -83,12 +92,13 @@ cardList = readInputFile("Cards.txt")
 for card in cardList:
     addWordsToDictionaryFromString(card)
 
-#noise = tf.random.uniform(shape = [1,100], maxval = 767, dtype = tf.int32)
-#generator = generator_model()
+noise = tf.random.uniform(shape = [1,100], maxval = 767, dtype = tf.int32)
+generator = generator_model()
 
-#generated_card = tf.make_ndarray(tf.make_tensor_proto(generator(noise, training=False)))
+generated_card = tf.make_ndarray(tf.make_tensor_proto(generator(noise, training=False)))
 
 print(wordDict)
 
-#print(np.floor(generated_card)[0])
-#print(getWordsFromNumbers(np.floor(generated_card)[0]))
+
+print(np.floor(generated_card)[0])
+print(getWordsFromNumbers(np.floor(generated_card)[0]))

@@ -105,7 +105,7 @@ def generator_loss(fake_output):
     return cross_entropy(tf.ones_like(fake_output), fake_output)
 
 def train_step(cards):
-    noise = tf.random.uniform(shape = [1,noise_dim], maxval = 767, dtype = tf.int32)
+    noise = tf.random.uniform(shape = [1,noise_dim], maxval = len(wordDict), dtype = tf.int32)
     generated_cards = generator(noise, training=True)
 
     real_output = discriminator(cards, training=True)
@@ -128,7 +128,7 @@ def generateSaveCards(model, test_input, epoch):
     f.close()
 
 def train(dataset, epochs):
-    noise = tf.random.uniform(shape=[1, noise_dim], maxval=767, dtype=tf.int32)
+    noise = tf.random.uniform(shape=[1, noise_dim], maxval=len(wordDict), dtype=tf.int32)
     for epoch in range(epochs):
         start = time.time()
         for cards in dataset:
@@ -154,3 +154,4 @@ checkpoint = tf.train.Checkpoint(generator_optimizer=generator_optimizer,
                                  discriminator_optimizer=discriminator_optimizer,
                                  generator=generator,
                                  discriminator=discriminator)
+

@@ -11,6 +11,10 @@ textSize = 50
 outputNeurons = costSize+nameSize+typeSize+textSize
 wordDict = {"": 0}
 revWordDict = {0: ""}
+cross_entropy = tf.keras.losses.BinaryCrossentropy(from_logits=True)
+EPOCHS = 50
+noise_dim = 100
+num_examples_to_generate = 16
 
 def readInputFile(fileName):
     outputList = [];
@@ -88,17 +92,25 @@ def getWordsFromNumbers(numList):
         count += 1
     return word
 
+def classifier_loss(real_output, fake_output):
+    real_loss = cross_entropy(tf.ones_like(real_output), real_output)
+    fake_loss = cross_entropy(tf.zeros_like(fake_output), fake_output)
+    return real_loss + fake_loss
+
+def generator_loss(fake_output):
+    return cross_entropy(tf.ones_like(fake_output), fake_output)
+
+
+    
+
 cardList = readInputFile("Cards.txt")
 for card in cardList:
     addWordsToDictionaryFromString(card)
 
-noise = tf.random.uniform(shape = [1,100], maxval = 767, dtype = tf.int32)
-generator = generator_model()
 
-generated_card = tf.make_ndarray(tf.make_tensor_proto(generator(noise, training=False)))
+generator = generator_model()
 
 print(wordDict)
 
 
-print(np.floor(generated_card)[0])
-print(getWordsFromNumbers(np.floor(generated_card)[0]))
+

@@ -1,4 +1,5 @@
 import tensorflow as tf
+import tensorflow.keras as keras
 from tensorflow.keras import layers
 from tensorflow.python.keras import backend as K
 import numpy as np
@@ -15,6 +16,8 @@ cross_entropy = tf.keras.losses.BinaryCrossentropy(from_logits=True)
 EPOCHS = 50
 noise_dim = 100
 num_examples_to_generate = 16
+generator_optimizer = keras.optimizers.Adam()
+discriminator_optimizer = keras.optimizers.Adam()
 
 def readInputFile(fileName):
     outputList = [];
@@ -100,8 +103,22 @@ def classifier_loss(real_output, fake_output):
 def generator_loss(fake_output):
     return cross_entropy(tf.ones_like(fake_output), fake_output)
 
+def train_step(cards):
+    noise = tf.random.uniform(shape = [1,noise_dim], maxval = 767, dtype = tf.int32)
+    generated_cards = generator(noise, training=True)
 
-    
+    real_output = discriminator(cards, training=True)
+    fake_output = discriminator(generated_cards, training=True)
+
+    gen_loss = generator_loss(fake_output)
+    class_loss = classifier_loss(real_output, fake_output)
+
+    gradients_of_generator = tf.GradientTape().gradient(gen_loss, generator.trainable_variables)
+    gradients_of_classifier = tf.GradientTape().gradient(gen_loss, discriminator.trainable_variables)
+
+    generator_optimizer.apply_gradients(zip(gradients_of_generator, generator.trainable_variables))
+    discriminator_optimizer.apply_gradients(zip(gradients_of_classifier, discriminator.trainable_variables))
+
 
 cardList = readInputFile("Cards.txt")
 for card in cardList:
@@ -109,6 +126,7 @@ for card in cardList:
 
 
 generator = generator_model()
+discriminator = discriminator_model()
 
 print(wordDict)
 

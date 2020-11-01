@@ -68,7 +68,8 @@ def addWordsToDictionaryFromString(line):
                 word = word[len(word) -1]
 
             #Add word to dictionary
-            if not word in wordDict:
+            if not word.lower() in wordDict:
+                
                 wordDict[word.lower()] = len(wordDict)
                 revWordDict[len(wordDict)-1] = word.lower()
 
@@ -149,7 +150,6 @@ for card in cardList:
     addWordsToDictionaryFromString(card)
 
 
-
 train_data = [[]]
 i = 0
 for card in cardList:
@@ -165,8 +165,6 @@ for card in cardList:
                 train_data[i].append(wordDict[word.lower()])
     i += 1
     
-for word in train_data:
-    print(word)
 
 generator = generator_model()
 discriminator = discriminator_model()

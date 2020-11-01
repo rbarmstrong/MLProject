@@ -26,11 +26,11 @@ def generator_model():
     return model
 
 def addWordsToDictionaryFromString(line):
-    categories = line.split(";") #Separates by ;'s and gets rid of ;'s
+    catagories = line.split(";") #Separates by ;'s and gets rid of ;'s
     
-    for category in categories:
+    for catagory in catagories:
         
-        words = category.split() #Separates by spaces 
+        words = catagory.split() #Separates by spaces 
         
         for word in words:
 
@@ -42,6 +42,7 @@ def addWordsToDictionaryFromString(line):
             if word[len(word) -1] == "." and not "." in wordDict:
                 wordDict["."] = len(wordDict)
                 revWordDict[len(wordDict)-1] = "."
+                word = word[len(word) -1]
 
             #Add word to dictionary
             if not word in wordDict:
@@ -50,15 +51,30 @@ def addWordsToDictionaryFromString(line):
 
 
 def getWordsFromNumbers(numList):
-    word = ""
+    word = "Name: "
+    count = 0
     #Iterate through the numbers
     for num in numList:
+
+        if count == 3:
+            word += " Cost: "
+        if count == 4:
+            word += " Type: "
+        if count == 5:
+            word += " Description: "
         
         #If the word to add is a period, remove the trailing period
         if revWordDict[num] == ".":
             word = word[: len(word) -1]
         
-        word += revWordDict[num] + " "
+        word += revWordDict[num]
+
+        #If the word was not empty, add a space
+        if not revWordDict[num] == "":
+            word += " "
+
+        
+        count += 1
     return word
 
 cardList = readInputFile("Cards.txt")

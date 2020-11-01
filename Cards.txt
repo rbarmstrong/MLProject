@@ -19,7 +19,7 @@ Cold Snap;1;Attack;Deal 6 damage. Channel 1 Frost.
 Compile Driver;1;Attack;Deal 7 damage. Draw 1 card for each unique Orb you have.
 Consume;2;Skill;Gain 2 Focus. Lose 1 Orb slot.
 Colheaded;1;Skill;Channel 1 Frost. Draw 1 card.
-Core Surge;1;Attack;Deal 11 damage.Gain 1 Artifact. Exhaust.
+Core Surge;1;Attack;Deal 11 damage. Gain 1 Artifact. Exhaust.
 Creative AI;3;Power;At the start of your turn add a random Power card into your hand.
 Darkness;1;Skill;Channel 1 Dark.
 Defend;1;Skill;Gain 5 Block.
@@ -39,7 +39,7 @@ Glacier;2;Skill;Gain 7 Block. Channel 2 Frost.
 Go for the Eyes;0;Attack;Deal 3 damage. If the enemy intends to attack apply 1 weak.
 Heatsinks;1;Power;Whenever you play a Power card draw 1 card.
 Hello World;1;Power;At the start of your turn add a random Common card into your hand.
-Hologram;1;Skill;Gain 3 Block.Put a card from your discard pile into your hand. Exhaust.
+Hologram;1;Skill;Gain 3 Block. Put a card from your discard pile into your hand. Exhaust.
 Hyperbeam;2;Attack;Deal 26 damage to ALL enemies. Lost 3 focus.
 Leap;1;Skill;Gain 9 block.
 Loop;1;Power;At the start of your turn trigger the passive ability of your next orb.
@@ -56,7 +56,7 @@ Recycle;1;Skill;Exhaust a card. Gain Energy equal to its cost.
 Reinforced Body;X;Skill;Gain 7 Block X times.
 Reprogram;1;Skill;Lose 2 Focus. Gain 1 Strength. Gain 1 Dexterity.
 Rip and Tear;1;Attack;Deal 7 damage to a random enemy twice.
-Scrape;1;Attack;Deal 7 damage.Draw 3 cards. Discard all cards drawn this way that do not cost 0.
+Scrape;1;Attack;Deal 7 damage. Draw 3 cards. Discard all cards drawn this way that do not cost 0.
 Seek;0;Skill;Put 1 card from your draw pile into your hand. Exhaust.
 Self Repair;1;Power;At the end of comabt, heal 7 HP.
 Skim;1;Skill;Draw 3 cards.
@@ -113,7 +113,7 @@ Eviscerate;3;Attack;Costs 1 less Energy for each card discarded this turn. Deal 
 Expertise;1;Skill;Draw cards until you have 6 in your hand.
 Finisher;1;Attack;Deal 6 damage for each attack played this turn.
 Flechettes;1;Attack;Deal 4 damage for each Skill in your hand.
-Flying Knee;1;Attack;Deal 8 damage.Next turn gain Energy.
+Flying Knee;1;Attack;Deal 8 damage. Next turn gain Energy.
 Footwork;1;Power;Gain 2 Dexterity.
 Glass Knife;1;Attack;Deal 8 damage twice. Decrease the damage of this card by 2 this combat.
 Grand Finale;0;Attack;Can only be played if there are no cards in your draw pile. Deal 50 damage to ALL enemies.

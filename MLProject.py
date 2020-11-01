@@ -65,7 +65,7 @@ def addWordsToDictionaryFromString(line):
                     wordDict["."] = len(wordDict)
                     revWordDict[len(wordDict)-1] = "."
                     
-                word = word[len(word) -1]
+                word = word[:len(word) -1]
 
             #Add word to dictionary
             if not word.lower() in wordDict:
@@ -88,7 +88,7 @@ def getWordsFromNumbers(numList):
         
         #If the word to add is a period, remove the trailing period
         if revWordDict[num] == ".":
-            word = word[: len(word) -1]
+            word = word[:len(word) -1]
         
         word += revWordDict[num]
 
@@ -159,14 +159,15 @@ for card in cardList:
         words = category.split() #Separates by spaces 
         for word in words:
             if word[len(word) -1] == ".":
-                train_data[i].append(wordDict[word[len(word) -1].lower()])
+                train_data[i].append(wordDict[word[:len(word) -1].lower()])
                 train_data[i].append(wordDict["."])
             else:
                 train_data[i].append(wordDict[word.lower()])
     i += 1
+train_data = train_data[:len(train_data)-1]
     
-
 print(train_data)
+
 
 generator = generator_model()
 discriminator = discriminator_model()

@@ -166,6 +166,8 @@ for card in cardList:
     i += 1
     
 
+print(train_data)
+
 generator = generator_model()
 discriminator = discriminator_model()
 checkpoint_dir = './training_checkpoints'

@@ -95,6 +95,9 @@ for card in cardList:
 noise = tf.random.uniform(shape = [1,100], maxval = 767, dtype = tf.int32)
 generator = generator_model()
 
+generator_optimizer = keras.optimizers.Adam()
+discriminator_optimizer = keras.optimizers.Adam()
+
 generated_card = tf.make_ndarray(tf.make_tensor_proto(generator(noise, training=False)))
 
 print(wordDict)

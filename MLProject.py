@@ -120,6 +120,9 @@ def train_step(cards):
         gen_loss = generator_loss(fake_output)
         class_loss = classifier_loss(real_output, fake_output)
 
+        printTest = "gen: " + str(gen_loss) + " class: " + str(class_loss)
+        print(printTest)
+
         gradients_of_generator = gen_tape.gradient(gen_loss, generator.trainable_variables)
         gradients_of_classifier = disc_tape.gradient(gen_loss, discriminator.trainable_variables)
 
@@ -191,6 +194,7 @@ checkpoint = tf.train.Checkpoint(generator_optimizer=generator_optimizer,
                                  discriminator_optimizer=discriminator_optimizer,
                                  generator=generator,
                                  discriminator=discriminator)
+checkpoint.restore(tf.train.latest_checkpoint(checkpoint_dir))
 
-train(train_data, 250)
+train(train_data, 1)
 

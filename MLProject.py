@@ -6,17 +6,18 @@ import numpy as np
 import time
 import os
 K.clear_session()
+tf.config.experimental.list_physical_devices('GPU')
 
 nameSize = 4
 costSize = 1
 typeSize = 1
-textSize = 50
+textSize = 30
 outputNeurons = costSize+nameSize+typeSize+textSize
 wordDict = {"": 0}
 revWordDict = {0: ""}
 input_data = [[]]
 cross_entropy = tf.keras.losses.BinaryCrossentropy(from_logits=True)
-EPOCHS = 50
+EPOCHS = 1000
 BATCH_SIZE = 1
 noise_dim = 100
 num_examples_to_generate = 16
@@ -32,17 +33,21 @@ def readInputFile(fileName):
 
 def generator_model():
     model = tf.keras.Sequential()
-    model.add(layers.Dense(outputNeurons, input_shape=(100,), activation = "relu", use_bias=False))
-    model.add(layers.Dense(outputNeurons, activation = "relu", use_bias=False))
-    model.add(layers.Dense(outputNeurons, activation = "relu", use_bias=False))
+    model.add(layers.Dense(100, input_shape=(noise_dim,), activation = "relu", use_bias=False))
+    model.add(layers.BatchNormalization())
+    model.add(layers.Dense(100, activation = "tanh"))
+    model.add(layers.BatchNormalization())
+    model.add(layers.Dense(outputNeurons, activation = "relu"))
     return model
 
 def discriminator_model():
     model = tf.keras.Sequential()
-    model.add(layers.Dense(50, input_shape=(outputNeurons,), activation = "relu", use_bias=False))
-    model.add(layers.Dropout(0.3))
-    model.add(layers.Dense(50, activation = "relu", use_bias=False))
-    model.add(layers.Dropout(0.3))
+    model.add(layers.Dense(100, input_shape=(outputNeurons,), activation = "relu", use_bias=False))
+    model.add(layers.Dropout(0.5))
+    model.add(layers.LeakyReLU())
+    model.add(layers.Dropout(0.5))
+    model.add(layers.Dense(100, activation="sigmoid",  use_bias=False))
+    model.add(layers.Dropout(0.5))
     model.add(layers.Dense(1, activation = "relu", use_bias=False))
     return model
 
@@ -120,11 +125,11 @@ def train_step(cards):
         gen_loss = generator_loss(fake_output)
         class_loss = classifier_loss(real_output, fake_output)
 
-        printTest = "gen: " + str(gen_loss) + " class: " + str(class_loss)
-        print(printTest)
+        #printTest = "gen: " + str(gen_loss) + " class: " + str(class_loss)
+        #print(printTest)
 
         gradients_of_generator = gen_tape.gradient(gen_loss, generator.trainable_variables)
-        gradients_of_classifier = disc_tape.gradient(gen_loss, discriminator.trainable_variables)
+        gradients_of_classifier = disc_tape.gradient(class_loss, discriminator.trainable_variables)
 
         generator_optimizer.apply_gradients(zip(gradients_of_generator, generator.trainable_variables))
         discriminator_optimizer.apply_gradients(zip(gradients_of_classifier, discriminator.trainable_variables))
@@ -137,12 +142,12 @@ def generateSaveCards(model, test_input, epoch):
     f.close()
 
 def train(dataset, epochs):
-    noise = tf.random.uniform(shape=[1, noise_dim], maxval=len(wordDict), dtype=tf.int32)
     for epoch in range(epochs):
         start = time.time()
         for cards in dataset:
             train_step(tf.convert_to_tensor(cards))
 
+        noise = tf.random.uniform(shape=[1, noise_dim], maxval=len(wordDict), dtype=tf.int32)
         generateSaveCards(generator, noise, epoch + 1)
         if (epoch + 1) % 5 == 0:
             checkpoint.save(file_prefix=checkpoint_prefix)
@@ -196,5 +201,5 @@ checkpoint = tf.train.Checkpoint(generator_optimizer=generator_optimizer,
                                  discriminator=discriminator)
 checkpoint.restore(tf.train.latest_checkpoint(checkpoint_dir))
 
-train(train_data, 1)
+train(train_data, EPOCHS)
 

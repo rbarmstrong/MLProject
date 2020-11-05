@@ -18,7 +18,7 @@ Claw;0;Attack;Deal 6 damage. Channel 1 Frost.
 Cold Snap;1;Attack;Deal 6 damage. Channel 1 Frost.
 Compile Driver;1;Attack;Deal 7 damage. Draw 1 card for each unique Orb you have.
 Consume;2;Skill;Gain 2 Focus. Lose 1 Orb slot.
-Colheaded;1;Skill;Channel 1 Frost. Draw 1 card.
+Coldheaded;1;Skill;Channel 1 Frost. Draw 1 card.
 Core Surge;1;Attack;Deal 11 damage. Gain 1 Artifact. Exhaust.
 Creative AI;3;Power;At the start of your turn add a random Power card into your hand.
 Darkness;1;Skill;Channel 1 Dark.
@@ -251,7 +251,7 @@ Fasting;2;Power;Gain 3 Strength. Gain Dexterity. Gain 1 less Energy at the start
 Fear No Evil;1;Attack;Deal 8 damage. If the enemy intends to Attack, enter Calm.
 Flurry of Blows;0;Attack;Deal 4 damage. Whenever you change Stances, return this from the discard pile to your hand.
 Flying Sleeves;1;Attack;Retain. Deal 4 damage twice.
-Follow-Up;1;Attack;Deal 7 damage. If the ladt card played this combat was an Attack, gain Energy.
+Follow-Up;1;Attack;Deal 7 damage. If the last card played this combat was an Attack, gain Energy.
 Foreign Influence;0;Skill;Choose 1 of 3 Attacks of any color to add into your hand. Exhaust. 
 Foresight;1;Power;At the start of your turn, Scry 3.
 Halt;0;Skill;Gain 3 Block. If you are in Wrath, gain 9 additional Block.
@@ -266,7 +266,7 @@ Meditate;1;Skill;Put a card from your discard pile into your hand and Retain it.
 Mental Fortress;1;Power;Whenever you change Stances, gain 4 Block.
 Nirvana;1;Power;Whenever you Scry, gain 3 Block.
 Omniscience;4;Skill;Choose a card in your draw pile. Play the chosen card twice and exhaust it. Exhaust.
-Perserverance;1;Skill;Retain. Gain 5 Block. When Retained, increase its Block by 2 this combat.
+Perseverance;1;Skill;Retain. Gain 5 Block. When Retained, increase its Block by 2 this combat.
 Pray;1;Skill;Gain 3 Mantra. Shuffle an Insight into your draw pile.
 Pressure Points;1;Skill;Apply 8 mark. All enemies lose HP equal to their Mark.
 Prostrate;0;Skill;Gain 2 Mantra. Gain 4 Block.
@@ -284,7 +284,7 @@ Spirit Shield;2;Skill;Gain 3 Block for each card in your hand.
 Strike;1;Attack;Deal 6 damage.
 Study;2;Power;At the end of your turn, shuffle an Insight into your draw pile.
 Swivel;2;Skill;Gain 8 Block. The next Attack you play costs 0.
-Talk to the Hand;1;Attack;Deal 5 damage. WHenever you attack this enemy, gain 2 Block. Exhaust.
+Talk to the Hand;1;Attack;Deal 5 damage. Whenever you attack this enemy, gain 2 Block. Exhaust.
 Tantrum;1;Attack;Deal 3 damage 3 times. Enter Wrath. Shuffle this card into your draw pile.
 Third Eye;1;Skill;Gain 7 Block. Scry 3.
 Tranquility;1;Skill;Retain. Enter Calm. Exhaust.
@@ -352,7 +352,7 @@ Thinking Ahead;0;Skill;Draw 2 cards. Put a card from your hand on top of your dr
 Transmutation;X;Skill;Add X random Colorless cards into your gand. They cost 0 this turn. Exhaust.
 Violence;0;Skill;Put 3 random Attacks from your draw pile into your hand. Exhaust.
 Curse of the Bell;-1;Curse;Unplayable. Cannot be removed from your deck.
-Ascender's Bane;-1;Curse;Unplayabvle. Ethereal. Cannot be removed from your deck.
+Ascender's Bane;-1;Curse;Unplayable. Ethereal. Cannot be removed from your deck.
 Clumsy;-1;Curse;Unplayable. Ethereal.
 Decay;-1;Curse;Unplayable. At the end of your turn, take 2 damage.
 Doubt;-1;Curse;Unplayable. At the end of your turn, gain 1 Weak.

@@ -1,1 +1,1 @@
-Card at epoch 1Name:  Cost:  Type:  Description: one: turbo bouncing non-attack a next normality 
+Card at epoch 215Name: 10  Cost: if  Type: deal  Description: cold put 6 1 each gain into. hand damage one played discard discard every energy your at 

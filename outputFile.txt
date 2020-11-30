@@ -1,1 +1,0 @@
-Card at epoch 215Name: 10  Cost: if  Type: deal  Description: cold put 6 1 each gain into. hand damage one played discard discard every energy your at 

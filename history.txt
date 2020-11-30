@@ -1,5 +1,0 @@
-Epoch 1300: Name: choke  Cost:  Type:  Description: bomb this establishment bottom havoc 21 
-Epoch 2300: Name: darkness  Cost:  Type:  Description: 3 exhaust chosen tempest power exhausted,. 
-Epoch 3000: Name:  Cost:  Type:  Description: their bloodletting card 15 fire on discard they 
-Epoch 4000: Name:  Cost:  Type:  Description: perserverance eviscerate orbs agony ghostly loop 
-Epoch 7000: Name:  Cost:  Type:  Description: status white snap tear machina lightning enemies plated 

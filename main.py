@@ -1,9 +1,10 @@
 import tensorflow as tf
+import tkinter as tk
 
 import numpy as np
 import os
 
-EPOCHS = 30
+EPOCHS = 1
 embedding_dim = 256
 rnn_units = 1024
 BATCH_SIZE = 1
@@ -110,4 +111,35 @@ model.load_weights(tf.train.latest_checkpoint(checkpoint_dir))
 
 #history = train(model, EPOCHS, checkpoint_callback)
 
-print(generate_text(model, start_string=u"Strike", temperature=TEMP, num_generate=NUMGEN))
+# sets up the UI Frames
+master = tk.Tk()
+master.title("Card Generator")
+sliderFrame = tk.Frame(master)
+sliderFrame.pack()
+
+#Sets variables and generates text
+def generateButtonFunc():
+    TEMP = temperatureVar.get()
+    NUMGEN = numGenVar.get()
+    text = tk.Text(master, width=200)
+    textToPrint = generate_text(model, start_string=u"Strike", temperature=TEMP, num_generate=NUMGEN)
+    text.insert(tk.INSERT, textToPrint)
+    text.pack()
+    
+
+#Sets up the sliders and generate button
+
+temperatureVar = tk.DoubleVar()
+temperatureScale = tk.Scale(sliderFrame, from_=0.1, to=1, resolution=0.05, label="Temperature", variable = temperatureVar)
+temperatureScale.pack(side=tk.LEFT)
+
+numGenVar = tk.IntVar()
+numGenScale = tk.Scale(sliderFrame, from_=1000, to=10000, resolution=100, label="characters", variable = numGenVar)
+numGenScale.pack(side=tk.LEFT)
+
+
+generateButton = tk.Button(master, command=generateButtonFunc, text="generate")
+generateButton.pack()
+
+
+

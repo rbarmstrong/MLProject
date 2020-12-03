@@ -5,8 +5,8 @@ import numpy as np
 import os
 
 EPOCHS = 30
-embedding_dim = 256
-rnn_units = 1024
+embedding_dim = 260
+rnn_units = 200
 BATCH_SIZE = 1
 BUFFER_SIZE = 150
 seq_length = 50
@@ -114,8 +114,6 @@ checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
 
 model.load_weights(tf.train.latest_checkpoint(checkpoint_dir))
 
-#history = train(model, EPOCHS, checkpoint_callback)
-
 # sets up the UI Frames
 master = tk.Tk()
 master.title("Card Generator")
@@ -126,9 +124,10 @@ sliderFrame.pack()
 def generateButtonFunc():
     TEMP = temperatureVar.get()
     NUMGEN = numGenVar.get()
+    start = seedEntry.get()
 
     text = tk.Text(master, width=200)
-    textToPrint = generate_text(model, start_string=u"Strike", temperature=TEMP, num_generate=NUMGEN)
+    textToPrint = generate_text(model, start_string=start, temperature=TEMP, num_generate=NUMGEN)
     text.insert(tk.INSERT, textToPrint)
     text.pack()
 
@@ -165,8 +164,16 @@ def trainButtonFunc():
         filepath=checkpoint_prefix,
         save_weights_only=True)
 
+    if checkBtn.config('relief')[-1] == 'sunken':
+        model.load_weights(tf.train.latest_checkpoint(checkpoint_dir))
+
     history = train(model, EPOCHS, checkpoint_callback)
-    
+
+def toggle():
+    if checkBtn.config('relief')[-1] == 'sunken':
+        checkBtn.config(relief="raised")
+    else:
+        checkBtn.config(relief="sunken")
 
 #Sets up the sliders and generate button
 
@@ -198,8 +205,18 @@ bufferSizeVar = tk.IntVar()
 bufferSizeScale = tk.Scale(sliderFrame, from_=10, to=500, resolution=10, label="Buffer Size", variable = bufferSizeVar)
 bufferSizeScale.pack(side=tk.LEFT)
 
+entryLabel = tk.Label(master, text = "Generation Start")
+entryLabel.pack()
+seedEntry = tk.Entry(master)
+seedEntry.insert(0, "Strike")
+seedEntry.pack()
+checkBtn = tk.Button(master, text="Load Checkpoints", relief="raised", command=toggle)
+checkBtn.pack()
+
 generateButton = tk.Button(master, command=generateButtonFunc, text="Generate")
 generateButton.pack()
 
 trainButton = tk.Button(master, command=trainButtonFunc, text="Train")
 trainButton.pack()
+
+tk.mainloop()

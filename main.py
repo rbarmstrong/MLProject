@@ -4,7 +4,7 @@ import tkinter as tk
 import numpy as np
 import os
 
-EPOCHS = 1
+EPOCHS = 30
 embedding_dim = 256
 rnn_units = 1024
 BATCH_SIZE = 1
@@ -23,6 +23,10 @@ def build_model(vocab_size, embedding_dim, rnn_units, batch_size):
     model = tf.keras.Sequential([
         tf.keras.layers.Embedding(vocab_size, embedding_dim,
                                   batch_input_shape=[batch_size, None]),
+        tf.keras.layers.GRU(rnn_units,
+                            return_sequences=True,
+                            stateful=True,
+                            recurrent_initializer='glorot_uniform'),
         tf.keras.layers.GRU(rnn_units,
                             return_sequences=True,
                             stateful=True,
@@ -81,11 +85,12 @@ examples_per_epoch = len(text)//(seq_length+1)
 # Create training examples / targets
 char_dataset = tf.data.Dataset.from_tensor_slices(text_as_int)
 
-sequences = char_dataset.batch(seq_length+1, drop_remainder=True)
+sequences = char_dataset.batch(seq_length + 1, drop_remainder=True)
 
 dataset = sequences.map(split_input_target)
 
 dataset = dataset.shuffle(BUFFER_SIZE).batch(BATCH_SIZE, drop_remainder=True)
+vocab_size = len(vocab)
 
 # Length of the vocabulary in chars
 vocab_size = len(vocab)
@@ -121,10 +126,46 @@ sliderFrame.pack()
 def generateButtonFunc():
     TEMP = temperatureVar.get()
     NUMGEN = numGenVar.get()
+
     text = tk.Text(master, width=200)
     textToPrint = generate_text(model, start_string=u"Strike", temperature=TEMP, num_generate=NUMGEN)
     text.insert(tk.INSERT, textToPrint)
     text.pack()
+
+def trainButtonFunc():
+    EPOCHS = epochsVar.get()
+    embedding_dim = embeddingDimVar.get()
+    rnn_units = rnnUnitsVar.get()
+    BATCH_SIZE = batchSizeVar.get()
+    BUFFER_SIZE = bufferSizeVar.get()
+    # Create training examples / targets
+    char_dataset = tf.data.Dataset.from_tensor_slices(text_as_int)
+
+    sequences = char_dataset.batch(seq_length + 1, drop_remainder=True)
+
+    dataset = sequences.map(split_input_target)
+
+    dataset = dataset.shuffle(BUFFER_SIZE).batch(BATCH_SIZE, drop_remainder=True)
+    vocab_size = len(vocab)
+
+    model = build_model(
+        vocab_size=len(vocab),
+        embedding_dim=embedding_dim,
+        rnn_units=rnn_units,
+        batch_size=BATCH_SIZE)
+
+    model.compile(optimizer='adam', loss=loss)
+
+    # Directory where the checkpoints will be saved
+    checkpoint_dir = './training_checkpoints'
+    # Name of the checkpoint files
+    checkpoint_prefix = os.path.join(checkpoint_dir, "ckpt_{epoch}")
+
+    checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
+        filepath=checkpoint_prefix,
+        save_weights_only=True)
+
+    history = train(model, EPOCHS, checkpoint_callback)
     
 
 #Sets up the sliders and generate button
@@ -134,12 +175,31 @@ temperatureScale = tk.Scale(sliderFrame, from_=0.1, to=1, resolution=0.05, label
 temperatureScale.pack(side=tk.LEFT)
 
 numGenVar = tk.IntVar()
-numGenScale = tk.Scale(sliderFrame, from_=1000, to=10000, resolution=100, label="characters", variable = numGenVar)
+numGenScale = tk.Scale(sliderFrame, from_=1000, to=10000, resolution=100, label="Characters", variable = numGenVar)
 numGenScale.pack(side=tk.LEFT)
 
+epochsVar = tk.IntVar()
+epochsScale = tk.Scale(sliderFrame, from_=1, to=50, resolution=1, label="Epochs", variable = epochsVar)
+epochsScale.pack(side=tk.LEFT)
 
-generateButton = tk.Button(master, command=generateButtonFunc, text="generate")
+embeddingDimVar = tk.IntVar()
+embeddingDimScale = tk.Scale(sliderFrame, from_=10, to=1000, resolution=10, label="Embedding Dimensions", variable = embeddingDimVar)
+embeddingDimScale.pack(side=tk.LEFT)
+
+rnnUnitsVar = tk.IntVar()
+rnnUnitsScale = tk.Scale(sliderFrame, from_=1, to=1500, resolution=10, label="RNN Units", variable = rnnUnitsVar)
+rnnUnitsScale.pack(side=tk.LEFT)
+
+batchSizeVar = tk.IntVar()
+batchSizeScale = tk.Scale(sliderFrame, from_=1, to=5, resolution=1, label="Batch Size", variable = batchSizeVar)
+batchSizeScale.pack(side=tk.LEFT)
+
+bufferSizeVar = tk.IntVar()
+bufferSizeScale = tk.Scale(sliderFrame, from_=10, to=500, resolution=10, label="Buffer Size", variable = bufferSizeVar)
+bufferSizeScale.pack(side=tk.LEFT)
+
+generateButton = tk.Button(master, command=generateButtonFunc, text="Generate")
 generateButton.pack()
 
-
-
+trainButton = tk.Button(master, command=trainButtonFunc, text="Train")
+trainButton.pack()
